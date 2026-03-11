@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ultimate Puzzle Challenge</title>
+
+<style>
+
+body{
+font-family: Arial;
+background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+text-align:center;
+margin:0;
+padding:0;
+}
+
+header{
+padding:30px;
+font-size:35px;
+font-weight:bold;
+}
+
+.container{
+background:white;
+color:black;
+width:60%;
+margin:auto;
+margin-top:40px;
+padding:40px;
+border-radius:15px;
+box-shadow:0 10px 40px rgba(0,0,0,0.5);
+}
+
+button{
+background:#2c5364;
+color:white;
+border:none;
+padding:12px 25px;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+margin:10px;
+}
+
+button:hover{
+background:#1a2e38;
+}
+
+input{
+padding:10px;
+width:60%;
+font-size:16px;
+border-radius:8px;
+border:1px solid gray;
+}
+
+.footer{
+margin-top:40px;
+font-size:18px;
+opacity:0.7;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+Ultimate Puzzle Challenge
+</header>
+
+<div class="container">
+
+<h2 id="puzzle">Press Start To Begin</h2>
+
+<input id="answer" placeholder="Type your answer here">
+
+<br><br>
+
+<button onclick="checkAnswer()">Submit</button>
+<button onclick="nextPuzzle()">Next Puzzle</button>
+<button onclick="translate()">Translate to Arabic</button>
+
+<h3 id="result"></h3>
+
+</div>
+
+<div class="footer">
+Directed by Sara Hamdi
+</div>
+
+<script>
+
+let puzzles=[
+{q:"I speak without a mouth and hear without ears. What am I?",a:"echo"},
+{q:"What gets bigger the more you take away?",a:"hole"},
+{q:"What has keys but can't open locks?",a:"piano"},
+{q:"What has a heart that doesn't beat?",a:"artichoke"},
+{q:"What can travel around the world while staying in the same corner?",a:"stamp"},
+{q:"What has many teeth but cannot bite?",a:"comb"},
+{q:"What has hands but cannot clap?",a:"clock"},
+{q:"What goes up but never comes down?",a:"age"},
+{q:"What runs but never walks?",a:"water"},
+{q:"What has one eye but cannot see?",a:"needle"},
+{q:"The more you take the more you leave behind. What are they?",a:"footsteps"},
+{q:"What begins with T ends with T and has T in it?",a:"teapot"},
+{q:"What can fill a room but takes no space?",a:"light"},
+{q:"What gets wetter the more it dries?",a:"towel"},
+{q:"What has a neck but no head?",a:"bottle"},
+{q:"What has a thumb and four fingers but is not alive?",a:"glove"},
+{q:"What has cities but no houses?",a:"map"},
+{q:"What goes through cities and fields but never moves?",a:"road"},
+{q:"What can you catch but not throw?",a:"cold"},
+{q:"What breaks but never falls?",a:"day"},
+{q:"What falls but never breaks?",a:"night"},
+{q:"What can’t talk but will reply when spoken to?",a:"echo"},
+{q:"What begins with an E but only contains one letter?",a:"envelope"},
+{q:"What gets sharper the more you use it?",a:"brain"},
+{q:"What has an eye but cannot see?",a:"needle"},
+{q:"What can’t be put in a saucepan?",a:"its lid"},
+{q:"What has legs but doesn’t walk?",a:"table"},
+{q:"What has a ring but no finger?",a:"phone"},
+{q:"What is always in front of you but can’t be seen?",a:"future"},
+{q:"What has many needles but doesn’t sew?",a:"pine tree"},
+{q:"What can you hold without touching?",a:"breath"},
+{q:"What kind of band never plays music?",a:"rubber band"},
+{q:"What has a face and two hands but no arms or legs?",a:"clock"},
+{q:"What can run but never walks?",a:"water"},
+{q:"What is full of holes but still holds water?",a:"sponge"},
+{q:"What can fly without wings?",a:"time"},
+{q:"What is always coming but never arrives?",a:"tomorrow"},
+{q:"What has words but never speaks?",a:"book"},
+{q:"What has a spine but no bones?",a:"book"},
+{q:"What can go up a chimney down but not down a chimney up?",a:"umbrella"},
+{q:"What has an end but no beginning?",a:"stick"},
+{q:"What kind of room has no doors or windows?",a:"mushroom"},
+{q:"What is always running but never tired?",a:"river"},
+{q:"What can be cracked made told and played?",a:"joke"},
+{q:"What has four wheels and flies?",a:"garbage truck"},
+{q:"What goes up and down but never moves?",a:"stairs"},
+{q:"What has ears but cannot hear?",a:"corn"},
+{q:"What kind of tree can you carry in your hand?",a:"palm"},
+{q:"What has an eye but cannot see?",a:"needle"},
+{q:"What is always hungry and must always be fed?",a:"fire"}
+];
+
+let index=0;
+
+function nextPuzzle(){
+document.getElementById("puzzle").innerText=puzzles[index].q;
+document.getElementById("result").innerText="";
+index++;
+if(index>=puzzles.length) index=0;
+}
+
+function checkAnswer(){
+
+let user=document.getElementById("answer").value.toLowerCase();
+
+let correct=puzzles[index-1].a;
+
+if(user.includes(correct)){
+document.getElementById("result").innerText="Correct!";
+}
+else{
+document.getElementById("result").innerText="Wrong answer!";
+}
+
+}
+
+function translate(){
+
+let arabic=[
+"أنا أتكلم بلا فم وأسمع بلا أذن من أنا؟",
+"ما الشيء الذي يكبر كلما أخذت منه؟",
+"ما الشيء الذي له مفاتيح ولا يفتح أبواب؟"
+];
+
+alert("Arabic translation feature example");
+
+}
+
+</script>
+
+</body>
+</html>
